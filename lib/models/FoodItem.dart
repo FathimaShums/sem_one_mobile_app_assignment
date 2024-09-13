@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 class FoodItem {
   int _id;
   String _title;
@@ -5,8 +7,10 @@ class FoodItem {
   String _image;
 
   double _price;
+  String _ItsCategory;
 
-  FoodItem(this._id, this._title, this._description, this._image, this._price);
+  FoodItem(this._id, this._title, this._description, this._image, this._price,
+      this._ItsCategory);
   int get id => _id;
   set id(int id) {
     _id = id;
@@ -30,5 +34,10 @@ class FoodItem {
   double get price => _price;
   set price(double price) {
     _price = price;
+  }
+
+  String get ItsCategory => _ItsCategory;
+  set ItsCategory(String ItsCategory) {
+    _ItsCategory = ItsCategory;
   }
 }
