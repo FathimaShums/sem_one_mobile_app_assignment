@@ -10,6 +10,6 @@ class MyFavourites extends StatefulWidget {
 class _MyFavouritesState extends State<MyFavourites> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Text("my Favourites Page");
   }
 }

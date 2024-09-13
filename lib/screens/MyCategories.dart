@@ -5,6 +5,6 @@ class MyCategories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Text("my Categories Page");
   }
 }
