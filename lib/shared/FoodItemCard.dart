@@ -21,7 +21,7 @@ class _FoodItemCardState extends State<FoodItemCard> {
           children: [
             Text(widget.TheFoodItem.title),
             Text(widget.TheFoodItem.description),
-            Text(widget.TheFoodItem.price as String),
+            // Text(widget.TheFoodItem.price as String),
           ],
         )
       ],
