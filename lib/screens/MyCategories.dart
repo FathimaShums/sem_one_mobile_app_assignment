@@ -11,7 +11,7 @@ class MyCategories extends StatelessWidget {
     return Row(children: [
       orientation == Orientation.portrait
           ? Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -35,7 +35,7 @@ class MyCategories extends StatelessWidget {
                   children: [
                     ACategory(
                       CategoryItem: TheCategory("Rice",
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-Lm7b6Kw7Z3tIxKZFFS0gV-jWDh9ozpORQ&s"),
+                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQUbOk2IklYhD0xLLk7PnCqKqZnkeEeIcYSQ&s"),
                     ),
                     ACategory(
                       CategoryItem: TheCategory("Rice",
