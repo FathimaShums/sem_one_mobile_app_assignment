@@ -13,18 +13,9 @@ class MyLanding extends StatefulWidget {
 }
 
 class _MyLandingState extends State<MyLanding> {
-  // Variable to keep track of the selected index
   int _selectedIndex = 0;
 
-  // List of widgets for different pages
   static List<String> AppBarTitles = <String>["Home", "Categories", "Profile"];
-  static List<Widget> _pages = <Widget>[
-    MyHomePage(),
-    MyCategories(),
-    MyFavourites(),
-    MyCart(),
-    MyProfile(),
-  ];
 
   // Function to update the selected index
   void _onItemTapped(int index) {
@@ -35,34 +26,33 @@ class _MyLandingState extends State<MyLanding> {
 
   @override
   Widget build(BuildContext context) {
+    Orientation orientation =
+        MediaQuery.of(context).orientation; // Get orientation here
+
+    List<Widget> _pages = <Widget>[
+      MyHomePage(orientation: orientation),
+      MyCategories(orientation: orientation),
+      MyFavourites(orientation: orientation),
+      MyCart(orientation: orientation),
+      MyProfile(orientation: orientation),
+    ];
+
     return Scaffold(
       appBar: AppBar(
-        title: Text("Union Place,Colombo 02"),
+        title: const Text("Union Place, Colombo 02"),
       ),
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
         items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: 'Menu'),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
+              icon: Icon(Icons.favorite), label: 'Favourites'),
           BottomNavigationBarItem(
-            icon: Icon(Icons.menu_book),
-            label: 'Menu',
-          ),
+              icon: Icon(Icons.shopping_basket_outlined), label: 'Cart'),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Favourites',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_basket_outlined),
-            label: 'Cart',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.supervised_user_circle),
-            label: 'User',
-          ),
+              icon: Icon(Icons.supervised_user_circle), label: 'User'),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.green,

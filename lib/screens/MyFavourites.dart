@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class MyFavourites extends StatefulWidget {
-  const MyFavourites({super.key});
+  const MyFavourites({super.key, required this.orientation});
+  final Orientation orientation;
 
   @override
   State<MyFavourites> createState() => _MyFavouritesState();
@@ -10,6 +11,6 @@ class MyFavourites extends StatefulWidget {
 class _MyFavouritesState extends State<MyFavourites> {
   @override
   Widget build(BuildContext context) {
-    return Text("my Favourites Page");
+    return const Text("my Favourites Page");
   }
 }

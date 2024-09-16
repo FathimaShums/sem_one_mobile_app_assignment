@@ -3,7 +3,8 @@ import 'package:sem_one_mobile_app_assignment/models/FoodItem.dart';
 import 'package:sem_one_mobile_app_assignment/shared/FoodItemCard.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+  const MyHomePage({super.key, required this.orientation});
+  final Orientation orientation;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();

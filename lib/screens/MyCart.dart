@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class MyCart extends StatefulWidget {
-  const MyCart({super.key});
+  const MyCart({super.key, required this.orientation});
+  final Orientation orientation;
 
   @override
   State<MyCart> createState() => _MyCartState();
@@ -10,6 +11,6 @@ class MyCart extends StatefulWidget {
 class _MyCartState extends State<MyCart> {
   @override
   Widget build(BuildContext context) {
-    return Text("my Cart ");
+    return const Text("my Cart ");
   }
 }

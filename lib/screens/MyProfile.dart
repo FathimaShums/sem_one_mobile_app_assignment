@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class MyProfile extends StatefulWidget {
-  const MyProfile({super.key});
+  const MyProfile({super.key, required this.orientation});
+  final Orientation orientation;
 
   @override
   State<MyProfile> createState() => _MyProfileState();
@@ -10,6 +11,6 @@ class MyProfile extends StatefulWidget {
 class _MyProfileState extends State<MyProfile> {
   @override
   Widget build(BuildContext context) {
-    return Text("my Profile Page");
+    return const Text("my Profile Page");
   }
 }
