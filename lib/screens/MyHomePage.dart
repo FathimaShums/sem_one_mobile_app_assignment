@@ -1,6 +1,7 @@
 import 'dart:js_interop';
 
 import 'package:flutter/material.dart';
+import 'package:sem_one_mobile_app_assignment/main.dart';
 import 'package:sem_one_mobile_app_assignment/models/FoodItem.dart';
 import 'package:sem_one_mobile_app_assignment/shared/FoodItemCard.dart';
 
@@ -13,7 +14,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<FoodItem> cartItems = [];
   final List<FoodItem> items = [
     FoodItem(
         1,
@@ -45,6 +45,10 @@ class _MyHomePageState extends State<MyHomePage> {
       cartItems.add(TheItem);
     };
   }
+  //    void NavigateToViewAllScreen() {
+  //   print("Size of the List" + cartItems.length.toString());
+  //   Navigator.pushNamed(context, '/favorites', arguments: cartItems);
+  // }
 
   @override
   Widget build(BuildContext context) {

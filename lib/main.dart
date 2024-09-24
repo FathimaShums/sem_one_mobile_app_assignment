@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:sem_one_mobile_app_assignment/models/FoodItem.dart';
 import 'package:sem_one_mobile_app_assignment/screens/landing.dart';
 
+List<FoodItem> cartItems = [];
 void main() {
   runApp(const MyApp());
 }
