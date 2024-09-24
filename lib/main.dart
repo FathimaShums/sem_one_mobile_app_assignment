@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sem_one_mobile_app_assignment/models/FoodItem.dart';
 import 'package:sem_one_mobile_app_assignment/screens/landing.dart';
+import 'package:sem_one_mobile_app_assignment/screens/login.dart';
 
 List<FoodItem> cartItems = [];
 List<FoodItem> favouriteItems = [];
@@ -21,6 +22,6 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         debugShowCheckedModeBanner: false,
-        home: MyLanding());
+        home: LoginPage());
   }
 }
