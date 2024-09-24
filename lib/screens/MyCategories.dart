@@ -49,32 +49,34 @@ class MyCategories extends StatelessWidget {
                 )
               ],
             )
-          : Column(
-              children: [
-                Row(
-                  children: [
-                    ACategory(
-                      CategoryItem: TheCategory(
-                        "Rice",
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-Lm7b6Kw7Z3tIxKZFFS0gV-jWDh9ozpORQ&s",
-                      ),
-                    ),
-                    ACategory(
-                      CategoryItem: TheCategory(
-                        "Rice",
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-Lm7b6Kw7Z3tIxKZFFS0gV-jWDh9ozpORQ&s",
-                      ),
-                    ),
-                    ACategory(
-                      CategoryItem: TheCategory(
-                        "Rice",
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-Lm7b6Kw7Z3tIxKZFFS0gV-jWDh9ozpORQ&s",
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            )
+          : Text("landscape mode")
+      //       : Column(
+      //           children: [
+      //             Row(
+      //               children: [
+      //                 ACategory(
+      //                   CategoryItem: TheCategory(
+      //                     "Rice",
+      //                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-Lm7b6Kw7Z3tIxKZFFS0gV-jWDh9ozpORQ&s",
+      //                   ),
+      //                 ),
+      //                 ACategory(
+      //                   CategoryItem: TheCategory(
+      //                     "Rice",
+      //                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-Lm7b6Kw7Z3tIxKZFFS0gV-jWDh9ozpORQ&s",
+      //                   ),
+      //                 ),
+      //                 ACategory(
+      //                   CategoryItem: TheCategory(
+      //                     "Rice",
+      //                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-Lm7b6Kw7Z3tIxKZFFS0gV-jWDh9ozpORQ&s",
+      //                   ),
+      //                 ),
+      //               ],
+
+      //             ),
+      //           ],
+      //         )
     ]);
     // Text(orientation == Orientation.portrait
     //     ? 'my categories in potrait mode'
