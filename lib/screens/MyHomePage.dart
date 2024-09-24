@@ -45,6 +45,14 @@ class _MyHomePageState extends State<MyHomePage> {
       cartItems.add(TheItem);
     };
   }
+
+  VoidCallback AddToFavourites(FoodItem item) {
+    return () {
+      FoodItem TheItem = FoodItem(item.id, item.title, item.description,
+          item.image, item.price, item.ItsCategory);
+      cartItems.add(TheItem);
+    };
+  }
   //    void NavigateToViewAllScreen() {
   //   print("Size of the List" + cartItems.length.toString());
   //   Navigator.pushNamed(context, '/favorites', arguments: cartItems);
@@ -57,7 +65,10 @@ class _MyHomePageState extends State<MyHomePage> {
       itemCount: items.length,
       itemBuilder: (context, index) {
         return FoodItemCard(
-            TheFoodItem: items[index], onPressed: AddToCart(items[index]));
+          TheFoodItem: items[index],
+          onPressed: AddToCart(items[index]),
+          whenPressed: AddToFavourites(items[index]),
+        );
         // return Container(
         //   padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
         //   child:
