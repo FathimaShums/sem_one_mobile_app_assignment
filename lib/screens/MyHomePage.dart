@@ -19,6 +19,21 @@ class _MyHomePageState extends State<MyHomePage> {
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcLhJZfKMziE5if_GMu-SiF09pSq8XY3KT_g&s",
         50.03,
         "Rice"),
+    FoodItem(
+        2,
+        "Ayaref",
+        "Bread",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcLhJZfKMziE5if_GMu-SiF09pSq8XY3KT_g&s",
+        50.03,
+        "Breads"),
+
+    // FoodItem(
+    //     2,
+    //     "Arayes",
+    //     "a type of bread",
+    //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcLhJZfKMziE5if_GMu-SiF09pSq8XY3KT_g&s",
+    //     60.9,
+    //     "Bread")
   ];
   @override
   Widget build(BuildContext context) {
@@ -27,9 +42,23 @@ class _MyHomePageState extends State<MyHomePage> {
       itemCount: items.length,
       itemBuilder: (context, index) {
         return FoodItemCard(
-          TheFoodItem: items[index],
-        );
+            TheFoodItem: items[index], onPressed: AddToCart(items[index]));
+        // return Container(
+        //   padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+        //   child:
+        //   //  FoodItemCard(
+        //   //   TheFoodItem: items[index],
+        //   ),
+        // );
       },
     );
   }
+}
+
+VoidCallback AddToCart(FoodItem item) {
+  return () {
+    FoodItem TheItem = FoodItem(item.id, item.title, item.description,
+        item.image, item.price, item.ItsCategory);
+    print(item.description);
+  };
 }
