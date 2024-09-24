@@ -1,3 +1,5 @@
+import 'dart:js_interop';
+
 import 'package:flutter/material.dart';
 import 'package:sem_one_mobile_app_assignment/models/FoodItem.dart';
 import 'package:sem_one_mobile_app_assignment/shared/FoodItemCard.dart';
@@ -11,6 +13,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  List<FoodItem> cartItems = [];
   final List<FoodItem> items = [
     FoodItem(
         1,
@@ -35,6 +38,14 @@ class _MyHomePageState extends State<MyHomePage> {
     //     60.9,
     //     "Bread")
   ];
+  VoidCallback AddToCart(FoodItem item) {
+    return () {
+      FoodItem TheItem = FoodItem(item.id, item.title, item.description,
+          item.image, item.price, item.ItsCategory);
+      cartItems.add(TheItem);
+    };
+  }
+
   @override
   Widget build(BuildContext context) {
     // return Text("HomePage");
@@ -53,12 +64,4 @@ class _MyHomePageState extends State<MyHomePage> {
       },
     );
   }
-}
-
-VoidCallback AddToCart(FoodItem item) {
-  return () {
-    FoodItem TheItem = FoodItem(item.id, item.title, item.description,
-        item.image, item.price, item.ItsCategory);
-    print(item.description);
-  };
 }
