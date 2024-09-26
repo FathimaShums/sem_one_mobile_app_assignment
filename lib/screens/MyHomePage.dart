@@ -3,6 +3,7 @@ import 'dart:js_interop';
 import 'package:flutter/material.dart';
 import 'package:sem_one_mobile_app_assignment/main.dart';
 import 'package:sem_one_mobile_app_assignment/models/FoodItem.dart';
+import 'package:sem_one_mobile_app_assignment/screens/ProductPageInfo.dart';
 import 'package:sem_one_mobile_app_assignment/shared/FoodItemCard.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -28,15 +29,15 @@ class _MyHomePageState extends State<MyHomePage> {
         "Maqluba",
         "rice,you turn the pot upside down when serving",
         "Includes fried vegetables such as eggplant, cauliflower, and potatoes, arranged in a pot before being cooked and inverted for presentation",
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcLhJZfKMziE5if_GMu-SiF09pSq8XY3KT_g&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC7yHnSVgsZqy1WQEsiT-Dgjj1NjpxjrpZWA&s",
         50.03,
         "Rice"),
     FoodItem(
         2,
-        "Ayaref",
+        "Cream Cheese",
         "Bread",
         "",
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcLhJZfKMziE5if_GMu-SiF09pSq8XY3KT_g&s",
+        "https://www.tashasartisanfoods.com/blog/wp-content/uploads/2023/04/Korean-Cream-Cheese-Garlic-Bread-8.jpeg",
         50.03,
         "Breads"),
 
@@ -63,6 +64,23 @@ class _MyHomePageState extends State<MyHomePage> {
       cartItems.add(TheItem);
     };
   }
+
+  VoidCallback NavigateToProductPage(FoodItem item) {
+    return () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ProductPageInfo(
+            TheItem: item,
+            onPressed: () => AddToCart(item), // Pass AddToCart action
+            whenPressed: () =>
+                AddToFavourites(item), // Pass AddToFavourites action
+          ),
+        ),
+      );
+    };
+  }
+
   //    void NavigateToViewAllScreen() {
   //   print("Size of the List" + cartItems.length.toString());
   //   Navigator.pushNamed(context, '/favorites', arguments: cartItems);
@@ -78,6 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
           TheFoodItem: items[index],
           onPressed: AddToCart(items[index]),
           whenPressed: AddToFavourites(items[index]),
+          onViewMore: NavigateToProductPage(items[index]),
         );
         // return Container(
         //   padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
