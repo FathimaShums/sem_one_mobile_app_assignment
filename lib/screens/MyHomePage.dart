@@ -15,10 +15,19 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final List<FoodItem> items = [
+    // FoodItem(
+    //     1,
+    //     "Maqluba",
+    //     "rice,you turn the pot upside down when serving",
+    //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcLhJZfKMziE5if_GMu-SiF09pSq8XY3KT_g&s",
+    //     "",
+    //     50.03,
+    //     "Rice"),
     FoodItem(
         1,
         "Maqluba",
         "rice,you turn the pot upside down when serving",
+        "Includes fried vegetables such as eggplant, cauliflower, and potatoes, arranged in a pot before being cooked and inverted for presentation",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcLhJZfKMziE5if_GMu-SiF09pSq8XY3KT_g&s",
         50.03,
         "Rice"),
@@ -26,6 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
         2,
         "Ayaref",
         "Bread",
+        "",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcLhJZfKMziE5if_GMu-SiF09pSq8XY3KT_g&s",
         50.03,
         "Breads"),
@@ -41,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
   VoidCallback AddToCart(FoodItem item) {
     return () {
       FoodItem TheItem = FoodItem(item.id, item.title, item.description,
-          item.image, item.price, item.ItsCategory);
+          item.detaileddescription, item.image, item.price, item.ItsCategory);
       cartItems.add(TheItem);
     };
   }
@@ -49,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
   VoidCallback AddToFavourites(FoodItem item) {
     return () {
       FoodItem TheItem = FoodItem(item.id, item.title, item.description,
-          item.image, item.price, item.ItsCategory);
+          item.detaileddescription, item.image, item.price, item.ItsCategory);
       cartItems.add(TheItem);
     };
   }
