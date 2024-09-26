@@ -11,7 +11,6 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _passwordController = TextEditingController();
   String _errorMessage = '';
 
-  // Mock login credentials
   final String mockUsername = 'user123';
   final String mockPassword = 'password123';
 
