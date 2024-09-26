@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart'; // Import the package
 import 'package:sem_one_mobile_app_assignment/models/FoodItem.dart';
 
 class Cartitemcard extends StatelessWidget {
@@ -7,6 +8,7 @@ class Cartitemcard extends StatelessWidget {
     required this.TheCartItem,
     required this.quantity,
   });
+
   final FoodItem TheCartItem;
   final int quantity;
 
@@ -14,10 +16,12 @@ class Cartitemcard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Image(
-          image: NetworkImage(TheCartItem.image),
+        CachedNetworkImage(
+          imageUrl: TheCartItem.image,
           width: 80,
           height: 80,
+          placeholder: (context, url) => CircularProgressIndicator(),
+          errorWidget: (context, url, error) => Icon(Icons.error),
         ),
         SizedBox(width: 10),
         Expanded(
