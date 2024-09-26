@@ -18,9 +18,37 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
-          useMaterial3: true,
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.green,
+            primary: Colors.green, // Primary color for light theme
+            secondary: Colors.greenAccent, // Secondary color for light theme
+          ),
+          useMaterial3: true, // Enable Material 3
         ),
+        darkTheme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.green,
+            brightness: Brightness.dark, // Dark mode settings
+            primary: Colors.green[800], // Primary color for dark theme
+            secondary:
+                Colors.greenAccent[700], // Secondary color for dark theme
+          ),
+          useMaterial3: true,
+          bottomNavigationBarTheme: BottomNavigationBarThemeData(
+            backgroundColor: Colors.black,
+            selectedItemColor:
+                Colors.greenAccent[700], // Active icon color in dark mode
+            unselectedItemColor:
+                Colors.white, // Inactive icon color in dark mode
+          ),
+          iconTheme: IconThemeData(
+            color: Colors.white, // Default icon color for dark mode
+          ),
+          //useMaterial3: true, // Enable Material 3 for dark theme
+        ),
+        themeMode:
+            ThemeMode.system, // Automatically switch based on device settings
+
         debugShowCheckedModeBanner: false,
         home: LoginPage());
   }
