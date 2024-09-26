@@ -43,7 +43,6 @@ class _MyLandingState extends State<MyLanding> {
       ),
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: 'Menu'),
@@ -55,8 +54,6 @@ class _MyLandingState extends State<MyLanding> {
               icon: Icon(Icons.supervised_user_circle), label: 'User'),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.green,
-        unselectedItemColor: Colors.black54,
         onTap: _onItemTapped,
       ),
     );
