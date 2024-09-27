@@ -42,7 +42,17 @@ class MyApp extends StatelessWidget {
             primary: Colors.green, // Primary color for light theme
             secondary: Colors.greenAccent, // Secondary color for light theme
           ),
-          useMaterial3: true, // Enable Material 3
+          useMaterial3: true,
+          bottomNavigationBarTheme: BottomNavigationBarThemeData(
+            backgroundColor: Colors.white,
+            selectedItemColor:
+                Colors.greenAccent[700], // Active icon color in dark mode
+            unselectedItemColor:
+                Colors.grey, // Inactive icon color in dark mode
+          ),
+          iconTheme: IconThemeData(
+            color: Colors.white, // Default icon color for dark mode
+          ), // Enable Material 3
         ),
         darkTheme: ThemeData(
           colorScheme: ColorScheme.fromSeed(
