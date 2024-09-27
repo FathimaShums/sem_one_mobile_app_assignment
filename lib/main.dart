@@ -8,10 +8,10 @@ List<FoodItem> favouriteItems = [];
 final List<FoodItem> items = [
   FoodItem(
       1,
-      "Maqluba",
-      "rice, you turn the pot upside down when serving",
-      "Includes fried vegetables such as eggplant, cauliflower, and potatoes, arranged in a pot before being cooked and inverted for presentation",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC7yHnSVgsZqy1WQEsiT-Dgjj1NjpxjrpZWA&s",
+      "Apple Pie Cinamonn buns",
+      "Tasty apple pie",
+      "looks scrumptious.",
+      "https://b8455d5a.rocketcdn.me/blog/wp-content/uploads/2023/09/Apple-Pie-Cinnamon-Rolls-11-720x960.jpeg",
       50.03,
       "Rice"),
   FoodItem(
@@ -21,7 +21,39 @@ final List<FoodItem> items = [
       "",
       "https://www.tashasartisanfoods.com/blog/wp-content/uploads/2023/04/Korean-Cream-Cheese-Garlic-Bread-8.jpeg",
       50.03,
-      "Breads"),
+      "Bread"),
+  FoodItem(
+      3,
+      "Burger",
+      " tasty delicious burger",
+      "This burger si topped with a lot of ingredients",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyMaHorBzEStwzrWGrfRMflVjt-p_zH5RBwcw3L78Z9CNsvjK29uceDTH1mmiI_8l4B2k&usqp=CAU",
+      50.4,
+      "Bread"),
+  FoodItem(
+      4,
+      "Knafeh",
+      "Absolutely tasty,caramelized",
+      "A palestinian dish",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz8_wrK5Yt0IYeybJRoHhuprweB0vQYSVLGQ&s",
+      25.7,
+      "Sweet"),
+  FoodItem(
+      4,
+      "Butter Bread",
+      " moist and buttery with a golden crispy crust",
+      "bread",
+      "https://b8455d5a.rocketcdn.me/blog/wp-content/uploads/2024/08/Homemade-Cornbread-Recipe-10.jpg",
+      20.5,
+      "Bread"),
+  FoodItem(
+      5,
+      "Chickpea salad",
+      "bursting with flavours and textures",
+      "bursting with flavours and textures,crunchy, spicy, and savoury snack that you’ll keep popping in your mouth by the fistful",
+      "https://b8455d5a.rocketcdn.me/blog/wp-content/uploads/2015/11/Roasted-Sweet-Potato-Chickpea-Salad-2-720x960.jpg",
+      25.05,
+      "Salad"),
 ];
 
 void main() {
