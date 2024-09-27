@@ -22,9 +22,12 @@ class Acategorypage extends StatefulWidget {
 
 class _AcategorypageState extends State<Acategorypage> {
   int _selectedIndex = 0;
+  bool _isHamburgerMenuSelected = true;
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      _isHamburgerMenuSelected = false; // When bottom navigation bar is tapped
     });
   }
 
@@ -68,8 +71,9 @@ class _AcategorypageState extends State<Acategorypage> {
   void _showCategories() {
     showMenu(
       context: context,
-      position: RelativeRect.fromLTRB(100.0, 100.0, 0.0, 0.0),
-      items: [
+      position:
+          RelativeRect.fromLTRB(0.0, AppBar().preferredSize.height, 0.0, 0.0),
+      items: const [
         PopupMenuItem(
           child: Text('Rice'),
           value: 'Rice',
@@ -86,6 +90,9 @@ class _AcategorypageState extends State<Acategorypage> {
       elevation: 8.0,
     ).then((value) {
       if (value != null) {
+        setState(() {
+          _isHamburgerMenuSelected = true; // Show category items when selected
+        });
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -99,37 +106,46 @@ class _AcategorypageState extends State<Acategorypage> {
     });
   }
 
+  // List of pages for each BottomNavigationBar item
+  List<Widget> _pages = [
+    MyHomePage(orientation: Orientation.portrait),
+    MyCategories(orientation: Orientation.portrait),
+    MyFavourites(orientation: Orientation.portrait),
+    MyCart(orientation: Orientation.portrait),
+    MyProfile(orientation: Orientation.portrait),
+  ];
+
   @override
   Widget build(BuildContext context) {
     List<FoodItem> filteredItems = getFilteredItems();
-    List<Widget> _pages = <Widget>[
-      MyHomePage(orientation: widget.orientation),
-      MyCategories(orientation: widget.orientation),
-      MyFavourites(orientation: widget.orientation),
-      MyCart(orientation: widget.orientation),
-      MyProfile(orientation: widget.orientation),
-    ];
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.oftype),
+        title: Text(_isHamburgerMenuSelected
+            ? widget.oftype
+            : 'Union Place, Colombo 2'),
         centerTitle: true,
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          onPressed: _showCategories,
-        ),
+        leading: _isHamburgerMenuSelected
+            ? IconButton(
+                icon: Icon(Icons.menu),
+                onPressed: _showCategories,
+              )
+            : null,
       ),
-      body: ListView.builder(
-        itemCount: filteredItems.length,
-        itemBuilder: (context, index) {
-          return FoodItemCard(
-            TheFoodItem: filteredItems[index],
-            onPressed: AddToCart(filteredItems[index]),
-            whenPressed: AddToFavourites(filteredItems[index]),
-            onViewMore: NavigateToProductPage(filteredItems[index]),
-          );
-        },
-      ),
+      body: _isHamburgerMenuSelected
+          ? ListView.builder(
+              itemCount: filteredItems.length,
+              itemBuilder: (context, index) {
+                return FoodItemCard(
+                  TheFoodItem: filteredItems[index],
+                  onPressed: AddToCart(filteredItems[index]),
+                  whenPressed: AddToFavourites(filteredItems[index]),
+                  onViewMore: NavigateToProductPage(filteredItems[index]),
+                );
+              },
+            )
+          : _pages[
+              _selectedIndex], // Show page based on BottomNavigationBar selection
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
