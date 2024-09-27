@@ -30,9 +30,6 @@ class _MyFavouritesState extends State<MyFavourites> {
           onAddToCart: () {
             AddToCart(favouriteItems[index]);
           },
-          onViewMore: () {
-            // Implement view more functionality
-          },
           orientation: MediaQuery.of(context).orientation,
         );
       },

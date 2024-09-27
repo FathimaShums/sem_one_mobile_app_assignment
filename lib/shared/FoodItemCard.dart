@@ -7,14 +7,14 @@ class FoodItemCard extends StatefulWidget {
     required this.TheFoodItem,
     required this.onPressed,
     required this.whenPressed,
-    required this.onViewMore,
+    // required this.onViewMore,
     required this.orientation,
   });
 
   final FoodItem TheFoodItem;
   final VoidCallback onPressed;
   final VoidCallback whenPressed;
-  final VoidCallback onViewMore;
+  // final VoidCallback onViewMore;
   final Orientation orientation;
 
   @override
@@ -91,17 +91,17 @@ class _FoodItemCardState extends State<FoodItemCard> {
                   const SizedBox(height: 8),
 
                   // 5th child: View More link
-                  GestureDetector(
-                    onTap: widget.onViewMore,
-                    child: Text(
-                      "View More",
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Theme.of(context).primaryColor,
-                        decoration: TextDecoration.underline,
-                      ),
-                    ),
-                  ),
+                  // GestureDetector(
+                  //   onTap: widget.onViewMore,
+                  //   child: Text(
+                  //     "View More",
+                  //     style: TextStyle(
+                  //       fontSize: 14,
+                  //       color: Theme.of(context).primaryColor,
+                  //       decoration: TextDecoration.underline,
+                  //     ),
+                  //   ),
+                  // ),
                 ],
               )
             : Row(
@@ -158,19 +158,6 @@ class _FoodItemCardState extends State<FoodItemCard> {
                               ),
                             ),
                           ],
-                        ),
-                        const SizedBox(height: 8),
-                        // View More button with VoidCallback
-                        GestureDetector(
-                          onTap: widget.onViewMore,
-                          child: Text(
-                            "View More",
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Theme.of(context).primaryColor,
-                              decoration: TextDecoration.underline,
-                            ),
-                          ),
                         ),
                       ],
                     ),

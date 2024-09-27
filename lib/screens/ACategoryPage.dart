@@ -6,7 +6,6 @@ import 'package:sem_one_mobile_app_assignment/screens/MyCategories.dart';
 import 'package:sem_one_mobile_app_assignment/screens/MyFavourites.dart';
 import 'package:sem_one_mobile_app_assignment/screens/MyHomePage.dart';
 
-import 'package:sem_one_mobile_app_assignment/screens/ProductPageInfo.dart';
 import 'package:sem_one_mobile_app_assignment/shared/FoodItemCard.dart';
 
 class Acategorypage extends StatefulWidget {
@@ -39,8 +38,7 @@ class _AcategorypageState extends State<Acategorypage> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      _isCategorySelected =
-          false; // Reset category selection when an icon is clicked
+      _isCategorySelected = false;
     });
   }
 
@@ -61,22 +59,6 @@ class _AcategorypageState extends State<Acategorypage> {
       FoodItem TheItem = FoodItem(item.id, item.title, item.description,
           item.detaileddescription, item.image, item.price, item.ItsCategory);
       favouriteItems.add(TheItem);
-    };
-  }
-
-  VoidCallback NavigateToProductPage(FoodItem item) {
-    return () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => ProductPageInfo(
-            TheItem: item,
-            onPressed: () => AddToCart(item), // Pass AddToCart action
-            whenPressed: () =>
-                AddToFavourites(item), // Pass AddToFavourites action
-          ),
-        ),
-      );
     };
   }
 
@@ -108,7 +90,6 @@ class _AcategorypageState extends State<Acategorypage> {
                   TheFoodItem: filteredItems[index],
                   onPressed: AddToCart(filteredItems[index]),
                   whenPressed: AddToFavourites(filteredItems[index]),
-                  onViewMore: NavigateToProductPage(filteredItems[index]),
                   orientation: widget.orientation,
                 );
               },

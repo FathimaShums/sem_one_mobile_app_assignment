@@ -52,6 +52,7 @@ class _MyCartState extends State<MyCart> {
                 return Cartitemcard(
                   TheCartItem: item,
                   quantity: quantity,
+                  orientation: widget.orientation,
                 );
               }),
         ),

@@ -3,7 +3,7 @@ import 'dart:js_interop';
 import 'package:flutter/material.dart';
 import 'package:sem_one_mobile_app_assignment/main.dart';
 import 'package:sem_one_mobile_app_assignment/models/FoodItem.dart';
-import 'package:sem_one_mobile_app_assignment/screens/ProductPageInfo.dart';
+
 import 'package:sem_one_mobile_app_assignment/shared/FoodItemCard.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -27,23 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return () {
       FoodItem TheItem = FoodItem(item.id, item.title, item.description,
           item.detaileddescription, item.image, item.price, item.ItsCategory);
-      cartItems.add(TheItem);
-    };
-  }
-
-  VoidCallback NavigateToProductPage(FoodItem item) {
-    return () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => ProductPageInfo(
-            TheItem: item,
-            onPressed: () => AddToCart(item), // Pass AddToCart action
-            whenPressed: () =>
-                AddToFavourites(item), // Pass AddToFavourites action
-          ),
-        ),
-      );
+      favouriteItems.add(TheItem);
     };
   }
 
@@ -62,7 +46,6 @@ class _MyHomePageState extends State<MyHomePage> {
           TheFoodItem: items[index],
           onPressed: AddToCart(items[index]),
           whenPressed: AddToFavourites(items[index]),
-          onViewMore: NavigateToProductPage(items[index]),
           orientation: widget.orientation,
         );
         // return Container(

@@ -72,7 +72,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(
             seedColor: Colors.green,
             primary: Colors.green, // Primary color for light theme
-            secondary: Colors.greenAccent, // Secondary color for light theme
+            secondary: Colors.lightGreen, // Secondary color for light theme
           ),
           useMaterial3: true,
           bottomNavigationBarTheme: BottomNavigationBarThemeData(
@@ -90,9 +90,8 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(
             seedColor: Colors.green,
             brightness: Brightness.dark, // Dark mode settings
-            primary: Colors.green[800], // Primary color for dark theme
-            secondary:
-                Colors.greenAccent[700], // Secondary color for dark theme
+            primary: Colors.greenAccent[700], // Primary color for dark theme
+            secondary: Colors.green, // Secondary color for dark theme
           ),
           useMaterial3: true,
           bottomNavigationBarTheme: BottomNavigationBarThemeData(

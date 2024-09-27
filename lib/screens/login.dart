@@ -13,8 +13,8 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _passwordController = TextEditingController();
   String _errorMessage = '';
 
-  final String mockUsername = 'user123';
-  final String mockPassword = 'password123';
+  final String mockUsername = 'sara';
+  final String mockPassword = 'sara123';
 
   void _login() {
     String username = _usernameController.text;
@@ -45,12 +45,18 @@ class _LoginPageState extends State<LoginPage> {
           children: [
             TextField(
               controller: _usernameController,
-              decoration: InputDecoration(labelText: 'Username'),
+              decoration: InputDecoration(
+                labelText: 'Username',
+                border: OutlineInputBorder(),
+              ),
             ),
             TextField(
               controller: _passwordController,
               obscureText: true,
-              decoration: InputDecoration(labelText: 'Password'),
+              decoration: InputDecoration(
+                labelText: 'Password',
+                border: OutlineInputBorder(),
+              ),
             ),
             SizedBox(height: 16.0),
             ElevatedButton(
@@ -63,7 +69,6 @@ class _LoginPageState extends State<LoginPage> {
               style: TextStyle(color: Colors.red),
             ),
             SizedBox(height: 16.0),
-            // Add a link to the Sign-Up page
             GestureDetector(
               onTap: () {
                 Navigator.push(
@@ -74,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
               child: Text(
                 'Don\'t have an account? Sign Up',
                 style: TextStyle(
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).colorScheme.secondary,
                   decoration: TextDecoration.underline,
                 ),
               ),

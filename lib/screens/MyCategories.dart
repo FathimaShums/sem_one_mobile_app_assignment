@@ -27,14 +27,14 @@ class MyCategories extends StatelessWidget {
                   ACategory(
                     CategoryItem: TheCategory(
                       "Appetizer",
-                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQUbOk2IklYhD0xLLk7PnCqKqZnkeEeIcYSQ&s",
+                      "https://b8455d5a.rocketcdn.me/blog/wp-content/uploads/2020/06/Labneh-2-720x924.jpg",
                     ),
                     navigateToPage: "Appetizer",
                   ),
                   ACategory(
                     CategoryItem: TheCategory(
                       "Salad",
-                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-Lm7b6Kw7Z3tIxKZFFS0gV-jWDh9ozpORQ&s",
+                      "https://b8455d5a.rocketcdn.me/blog/wp-content/uploads/2015/04/Lentil-Millet-Salad-3-720x924.jpg",
                     ),
                     navigateToPage: "Salad",
                   ),
@@ -52,17 +52,17 @@ class MyCategories extends StatelessWidget {
                   ),
                   ACategory(
                     CategoryItem: TheCategory(
-                      "Sweet",
-                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-Lm7b6Kw7Z3tIxKZFFS0gV-jWDh9ozpORQ&s",
+                      "Dessert",
+                      "https://b8455d5a.rocketcdn.me/blog/wp-content/uploads/2024/02/Easy-Strawberry-Mug-Cake-10-FEATURE-720x960.jpeg",
                     ),
-                    navigateToPage: "Sweet",
+                    navigateToPage: "Dessert",
                   ),
                   ACategory(
                     CategoryItem: TheCategory(
-                      "Dessert",
-                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-Lm7b6Kw7Z3tIxKZFFS0gV-jWDh9ozpORQ&s",
+                      "Drink",
+                      "https://b8455d5a.rocketcdn.me/blog/wp-content/uploads/2024/01/Easy-Korean-Strawberry-Milk-11.jpeg",
                     ),
-                    navigateToPage: "Appetizer",
+                    navigateToPage: "Drink",
                   ),
                 ],
               ),
@@ -78,7 +78,7 @@ class MyCategories extends StatelessWidget {
                     child: ACategory(
                       CategoryItem: TheCategory(
                         "Bread",
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-Lm7b6Kw7Z3tIxKZFFS0gV-jWDh9ozpORQ&s",
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQUbOk2IklYhD0xLLk7PnCqKqZnkeEeIcYSQ&s",
                       ),
                       navigateToPage: "Bread",
                     ),
@@ -87,7 +87,7 @@ class MyCategories extends StatelessWidget {
                     child: ACategory(
                       CategoryItem: TheCategory(
                         "Appetizer",
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQUbOk2IklYhD0xLLk7PnCqKqZnkeEeIcYSQ&s",
+                        "https://b8455d5a.rocketcdn.me/blog/wp-content/uploads/2020/06/Labneh-2-720x924.jpg",
                       ),
                       navigateToPage: "Appetizer",
                     ),
@@ -96,7 +96,7 @@ class MyCategories extends StatelessWidget {
                     child: ACategory(
                       CategoryItem: TheCategory(
                         "Salad",
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-Lm7b6Kw7Z3tIxKZFFS0gV-jWDh9ozpORQ&s",
+                        "https://b8455d5a.rocketcdn.me/blog/wp-content/uploads/2015/04/Lentil-Millet-Salad-3-720x924.jpg",
                       ),
                       navigateToPage: "Salad",
                     ),
@@ -118,19 +118,19 @@ class MyCategories extends StatelessWidget {
                   Flexible(
                     child: ACategory(
                       CategoryItem: TheCategory(
-                        "Sweet",
+                        "Dessert",
                         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQUbOk2IklYhD0xLLk7PnCqKqZnkeEeIcYSQ&s",
                       ),
-                      navigateToPage: "Sweet",
+                      navigateToPage: "Dessert",
                     ),
                   ),
                   Flexible(
                     child: ACategory(
                       CategoryItem: TheCategory(
-                        "Appetizer",
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQUbOk2IklYhD0xLLk7PnCqKqZnkeEeIcYSQ&s",
+                        "Drink",
+                        "https://b8455d5a.rocketcdn.me/blog/wp-content/uploads/2024/01/Easy-Korean-Strawberry-Milk-11.jpeg",
                       ),
-                      navigateToPage: "Appetizer",
+                      navigateToPage: "Drink",
                     ),
                   ),
                 ],

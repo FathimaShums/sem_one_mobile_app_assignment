@@ -6,13 +6,12 @@ class AlreadyFavourited extends StatelessWidget {
     super.key,
     required this.TheFoodItem,
     required this.onAddToCart,
-    required this.onViewMore,
     required this.orientation,
   });
 
   final FoodItem TheFoodItem;
   final VoidCallback onAddToCart;
-  final VoidCallback onViewMore;
+
   final Orientation orientation;
 
   @override
@@ -64,17 +63,6 @@ class AlreadyFavourited extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 8),
-                  GestureDetector(
-                    onTap: onViewMore,
-                    child: Text(
-                      "View More",
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Theme.of(context).primaryColor,
-                        decoration: TextDecoration.underline,
-                      ),
-                    ),
-                  ),
                 ],
               )
             : Row(
@@ -118,18 +106,6 @@ class AlreadyFavourited extends StatelessWidget {
                               ),
                             ),
                           ],
-                        ),
-                        const SizedBox(height: 8),
-                        GestureDetector(
-                          onTap: onViewMore,
-                          child: Text(
-                            "View More",
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Theme.of(context).primaryColor,
-                              decoration: TextDecoration.underline,
-                            ),
-                          ),
                         ),
                       ],
                     ),
