@@ -5,29 +5,42 @@ import 'package:sem_one_mobile_app_assignment/screens/MyCart.dart';
 import 'package:sem_one_mobile_app_assignment/screens/MyCategories.dart';
 import 'package:sem_one_mobile_app_assignment/screens/MyFavourites.dart';
 import 'package:sem_one_mobile_app_assignment/screens/MyHomePage.dart';
-import 'package:sem_one_mobile_app_assignment/screens/MyProfile.dart';
+
 import 'package:sem_one_mobile_app_assignment/screens/ProductPageInfo.dart';
 import 'package:sem_one_mobile_app_assignment/shared/FoodItemCard.dart';
 
 class Acategorypage extends StatefulWidget {
-  const Acategorypage(
-      {super.key, required this.orientation, required this.oftype});
+  const Acategorypage({
+    super.key,
+    required this.orientation,
+    required this.oftype,
+    required this.isCategorySelected,
+  });
 
   final Orientation orientation;
   final String oftype;
+  final bool isCategorySelected;
 
   @override
   State<Acategorypage> createState() => _AcategorypageState();
 }
 
 class _AcategorypageState extends State<Acategorypage> {
-  int _selectedIndex = 0;
-  bool _isHamburgerMenuSelected = true;
+  int _selectedIndex = 0; // Index for BottomNavigationBar
+  bool _isCategorySelected =
+      false; // Internal boolean to track category selection
+
+  @override
+  void initState() {
+    super.initState();
+    _isCategorySelected = widget.isCategorySelected;
+  }
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      _isHamburgerMenuSelected = false; // When bottom navigation bar is tapped
+      _isCategorySelected =
+          false; // Reset category selection when an icon is clicked
     });
   }
 
@@ -47,7 +60,7 @@ class _AcategorypageState extends State<Acategorypage> {
     return () {
       FoodItem TheItem = FoodItem(item.id, item.title, item.description,
           item.detaileddescription, item.image, item.price, item.ItsCategory);
-      cartItems.add(TheItem);
+      favouriteItems.add(TheItem);
     };
   }
 
@@ -67,72 +80,27 @@ class _AcategorypageState extends State<Acategorypage> {
     };
   }
 
-  // Method to show the categories
-  void _showCategories() {
-    showMenu(
-      context: context,
-      position:
-          RelativeRect.fromLTRB(0.0, AppBar().preferredSize.height, 0.0, 0.0),
-      items: const [
-        PopupMenuItem(
-          child: Text('Rice'),
-          value: 'Rice',
-        ),
-        PopupMenuItem(
-          child: Text('Bread'),
-          value: 'Bread',
-        ),
-        PopupMenuItem(
-          child: Text('Salads'),
-          value: 'Salads',
-        ),
-      ],
-      elevation: 8.0,
-    ).then((value) {
-      if (value != null) {
-        setState(() {
-          _isHamburgerMenuSelected = true; // Show category items when selected
-        });
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => Acategorypage(
-              orientation: widget.orientation,
-              oftype: value,
-            ),
-          ),
-        );
-      }
-    });
-  }
-
   // List of pages for each BottomNavigationBar item
-  List<Widget> _pages = [
+  final List<Widget> _pages = [
     MyHomePage(orientation: Orientation.portrait),
     MyCategories(orientation: Orientation.portrait),
     MyFavourites(orientation: Orientation.portrait),
     MyCart(orientation: Orientation.portrait),
-    MyProfile(orientation: Orientation.portrait),
   ];
 
   @override
   Widget build(BuildContext context) {
+    // Fetch filtered items based on the selected category
     List<FoodItem> filteredItems = getFilteredItems();
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(_isHamburgerMenuSelected
-            ? widget.oftype
-            : 'Union Place, Colombo 2'),
+        title:
+            Text(_isCategorySelected ? widget.oftype : 'Union Place,Colombo 2'),
+        // Change title dynamically
         centerTitle: true,
-        leading: _isHamburgerMenuSelected
-            ? IconButton(
-                icon: Icon(Icons.menu),
-                onPressed: _showCategories,
-              )
-            : null,
       ),
-      body: _isHamburgerMenuSelected
+      body: _isCategorySelected
           ? ListView.builder(
               itemCount: filteredItems.length,
               itemBuilder: (context, index) {
@@ -141,6 +109,7 @@ class _AcategorypageState extends State<Acategorypage> {
                   onPressed: AddToCart(filteredItems[index]),
                   whenPressed: AddToFavourites(filteredItems[index]),
                   onViewMore: NavigateToProductPage(filteredItems[index]),
+                  orientation: widget.orientation,
                 );
               },
             )
@@ -154,8 +123,6 @@ class _AcategorypageState extends State<Acategorypage> {
               icon: Icon(Icons.favorite), label: 'Favourites'),
           BottomNavigationBarItem(
               icon: Icon(Icons.shopping_basket_outlined), label: 'Cart'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.supervised_user_circle), label: 'User'),
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,

@@ -3,7 +3,6 @@ import 'package:sem_one_mobile_app_assignment/screens/MyCart.dart';
 import 'package:sem_one_mobile_app_assignment/screens/MyCategories.dart';
 import 'package:sem_one_mobile_app_assignment/screens/MyFavourites.dart';
 import 'package:sem_one_mobile_app_assignment/screens/MyHomePage.dart';
-import 'package:sem_one_mobile_app_assignment/screens/MyProfile.dart';
 
 class MyLanding extends StatefulWidget {
   const MyLanding({super.key});
@@ -15,7 +14,12 @@ class MyLanding extends StatefulWidget {
 class _MyLandingState extends State<MyLanding> {
   int _selectedIndex = 0;
 
-  static List<String> AppBarTitles = <String>["Home", "Categories", "Profile"];
+  static List<String> AppBarTitles = <String>[
+    "Home",
+    "Categories",
+    "Favourites",
+    "Cart"
+  ];
 
   // Function to update the selected index
   void _onItemTapped(int index) {
@@ -34,12 +38,17 @@ class _MyLandingState extends State<MyLanding> {
       MyCategories(orientation: orientation),
       MyFavourites(orientation: orientation),
       MyCart(orientation: orientation),
-      MyProfile(orientation: orientation),
     ];
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Union Place, Colombo 02"),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(AppBarTitles[_selectedIndex]),
+            Text("Union Place, Colombo 02")
+          ],
+        ),
       ),
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -50,8 +59,6 @@ class _MyLandingState extends State<MyLanding> {
               icon: Icon(Icons.favorite), label: 'Favourites'),
           BottomNavigationBarItem(
               icon: Icon(Icons.shopping_basket_outlined), label: 'Cart'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.supervised_user_circle), label: 'User'),
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,

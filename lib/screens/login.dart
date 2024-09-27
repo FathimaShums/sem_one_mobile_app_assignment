@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sem_one_mobile_app_assignment/screens/landing.dart';
+import 'package:sem_one_mobile_app_assignment/screens/signup.dart';
+// Import Sign Up page
 
 class LoginPage extends StatefulWidget {
   @override
@@ -59,6 +61,23 @@ class _LoginPageState extends State<LoginPage> {
             Text(
               _errorMessage,
               style: TextStyle(color: Colors.red),
+            ),
+            SizedBox(height: 16.0),
+            // Add a link to the Sign-Up page
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => mysignUp()),
+                );
+              },
+              child: Text(
+                'Don\'t have an account? Sign Up',
+                style: TextStyle(
+                  color: Theme.of(context).primaryColor,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
             ),
           ],
         ),

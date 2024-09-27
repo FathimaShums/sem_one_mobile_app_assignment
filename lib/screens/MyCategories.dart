@@ -22,43 +22,48 @@ class MyCategories extends StatelessWidget {
                       "Bread",
                       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQUbOk2IklYhD0xLLk7PnCqKqZnkeEeIcYSQ&s",
                     ),
-                    navigateToPage: "Breads",
+                    navigateToPage: "Bread",
                   ),
                   ACategory(
-                      CategoryItem: TheCategory(
-                        "Bread",
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQUbOk2IklYhD0xLLk7PnCqKqZnkeEeIcYSQ&s",
-                      ),
-                      navigateToPage: "Breads"),
+                    CategoryItem: TheCategory(
+                      "Appetizer",
+                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQUbOk2IklYhD0xLLk7PnCqKqZnkeEeIcYSQ&s",
+                    ),
+                    navigateToPage: "Appetizer",
+                  ),
                   ACategory(
-                      CategoryItem: TheCategory(
-                        "Salads",
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-Lm7b6Kw7Z3tIxKZFFS0gV-jWDh9ozpORQ&s",
-                      ),
-                      navigateToPage: "Salads"),
+                    CategoryItem: TheCategory(
+                      "Salad",
+                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-Lm7b6Kw7Z3tIxKZFFS0gV-jWDh9ozpORQ&s",
+                    ),
+                    navigateToPage: "Salad",
+                  ),
                 ],
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ACategory(
-                      CategoryItem: TheCategory(
-                        "Rice",
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQUbOk2IklYhD0xLLk7PnCqKqZnkeEeIcYSQ&s",
-                      ),
-                      navigateToPage: "Rice"),
+                    CategoryItem: TheCategory(
+                      "Rice",
+                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQUbOk2IklYhD0xLLk7PnCqKqZnkeEeIcYSQ&s",
+                    ),
+                    navigateToPage: "Rice",
+                  ),
                   ACategory(
-                      CategoryItem: TheCategory(
-                        "Rice",
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-Lm7b6Kw7Z3tIxKZFFS0gV-jWDh9ozpORQ&s",
-                      ),
-                      navigateToPage: "Sweets"),
+                    CategoryItem: TheCategory(
+                      "Sweet",
+                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-Lm7b6Kw7Z3tIxKZFFS0gV-jWDh9ozpORQ&s",
+                    ),
+                    navigateToPage: "Sweet",
+                  ),
                   ACategory(
-                      CategoryItem: TheCategory(
-                        "Rice",
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-Lm7b6Kw7Z3tIxKZFFS0gV-jWDh9ozpORQ&s",
-                      ),
-                      navigateToPage: "Appetizers"),
+                    CategoryItem: TheCategory(
+                      "Dessert",
+                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-Lm7b6Kw7Z3tIxKZFFS0gV-jWDh9ozpORQ&s",
+                    ),
+                    navigateToPage: "Appetizer",
+                  ),
                 ],
               ),
             ],
@@ -71,27 +76,30 @@ class MyCategories extends StatelessWidget {
                 children: [
                   Flexible(
                     child: ACategory(
-                        CategoryItem: TheCategory(
-                          "Rice",
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-Lm7b6Kw7Z3tIxKZFFS0gV-jWDh9ozpORQ&s",
-                        ),
-                        navigateToPage: "Rice"),
+                      CategoryItem: TheCategory(
+                        "Bread",
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-Lm7b6Kw7Z3tIxKZFFS0gV-jWDh9ozpORQ&s",
+                      ),
+                      navigateToPage: "Bread",
+                    ),
                   ),
                   Flexible(
                     child: ACategory(
-                        CategoryItem: TheCategory(
-                          "Bread",
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQUbOk2IklYhD0xLLk7PnCqKqZnkeEeIcYSQ&s",
-                        ),
-                        navigateToPage: "Rice"),
+                      CategoryItem: TheCategory(
+                        "Appetizer",
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQUbOk2IklYhD0xLLk7PnCqKqZnkeEeIcYSQ&s",
+                      ),
+                      navigateToPage: "Appetizer",
+                    ),
                   ),
                   Flexible(
                     child: ACategory(
-                        CategoryItem: TheCategory(
-                          "Salads",
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-Lm7b6Kw7Z3tIxKZFFS0gV-jWDh9ozpORQ&s",
-                        ),
-                        navigateToPage: "Rice"),
+                      CategoryItem: TheCategory(
+                        "Salad",
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-Lm7b6Kw7Z3tIxKZFFS0gV-jWDh9ozpORQ&s",
+                      ),
+                      navigateToPage: "Salad",
+                    ),
                   ),
                 ],
               ),
@@ -100,19 +108,30 @@ class MyCategories extends StatelessWidget {
                 children: [
                   Flexible(
                     child: ACategory(
-                        CategoryItem: TheCategory(
-                          "Pasta",
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-Lm7b6Kw7Z3tIxKZFFS0gV-jWDh9ozpORQ&s",
-                        ),
-                        navigateToPage: "Rice"),
+                      CategoryItem: TheCategory(
+                        "Rice",
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-Lm7b6Kw7Z3tIxKZFFS0gV-jWDh9ozpORQ&s",
+                      ),
+                      navigateToPage: "Rice",
+                    ),
                   ),
                   Flexible(
                     child: ACategory(
-                        CategoryItem: TheCategory(
-                          "Pizza",
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQUbOk2IklYhD0xLLk7PnCqKqZnkeEeIcYSQ&s",
-                        ),
-                        navigateToPage: "Rice"),
+                      CategoryItem: TheCategory(
+                        "Sweet",
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQUbOk2IklYhD0xLLk7PnCqKqZnkeEeIcYSQ&s",
+                      ),
+                      navigateToPage: "Sweet",
+                    ),
+                  ),
+                  Flexible(
+                    child: ACategory(
+                      CategoryItem: TheCategory(
+                        "Appetizer",
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQUbOk2IklYhD0xLLk7PnCqKqZnkeEeIcYSQ&s",
+                      ),
+                      navigateToPage: "Appetizer",
+                    ),
                   ),
                 ],
               ),

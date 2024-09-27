@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sem_one_mobile_app_assignment/main.dart';
+import 'package:sem_one_mobile_app_assignment/models/FoodItem.dart';
+import 'package:sem_one_mobile_app_assignment/shared/FavouritedItem.dart';
 
 class MyFavourites extends StatefulWidget {
   const MyFavourites({super.key, required this.orientation});
@@ -10,7 +13,29 @@ class MyFavourites extends StatefulWidget {
 
 class _MyFavouritesState extends State<MyFavourites> {
   @override
+  VoidCallback AddToCart(FoodItem item) {
+    return () {
+      FoodItem TheItem = FoodItem(item.id, item.title, item.description,
+          item.detaileddescription, item.image, item.price, item.ItsCategory);
+      cartItems.add(TheItem);
+    };
+  }
+
   Widget build(BuildContext context) {
-    return const Text("my Favourites Page");
+    return ListView.builder(
+      itemCount: favouriteItems.length,
+      itemBuilder: (context, index) {
+        return AlreadyFavourited(
+          TheFoodItem: favouriteItems[index],
+          onAddToCart: () {
+            AddToCart(favouriteItems[index]);
+          },
+          onViewMore: () {
+            // Implement view more functionality
+          },
+          orientation: MediaQuery.of(context).orientation,
+        );
+      },
+    );
   }
 }

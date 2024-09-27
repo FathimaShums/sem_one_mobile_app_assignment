@@ -15,40 +15,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final List<FoodItem> items = [
-    // FoodItem(
-    //     1,
-    //     "Maqluba",
-    //     "rice,you turn the pot upside down when serving",
-    //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcLhJZfKMziE5if_GMu-SiF09pSq8XY3KT_g&s",
-    //     "",
-    //     50.03,
-    //     "Rice"),
-    FoodItem(
-        1,
-        "Maqluba",
-        "rice,you turn the pot upside down when serving",
-        "Includes fried vegetables such as eggplant, cauliflower, and potatoes, arranged in a pot before being cooked and inverted for presentation",
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC7yHnSVgsZqy1WQEsiT-Dgjj1NjpxjrpZWA&s",
-        50.03,
-        "Rice"),
-    FoodItem(
-        2,
-        "Cream Cheese",
-        "Bread",
-        "",
-        "https://www.tashasartisanfoods.com/blog/wp-content/uploads/2023/04/Korean-Cream-Cheese-Garlic-Bread-8.jpeg",
-        50.03,
-        "Breads"),
-
-    // FoodItem(
-    //     2,
-    //     "Arayes",
-    //     "a type of bread",
-    //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcLhJZfKMziE5if_GMu-SiF09pSq8XY3KT_g&s",
-    //     60.9,
-    //     "Bread")
-  ];
   VoidCallback AddToCart(FoodItem item) {
     return () {
       FoodItem TheItem = FoodItem(item.id, item.title, item.description,
@@ -97,6 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
           onPressed: AddToCart(items[index]),
           whenPressed: AddToFavourites(items[index]),
           onViewMore: NavigateToProductPage(items[index]),
+          orientation: widget.orientation,
         );
         // return Container(
         //   padding: EdgeInsets.fromLTRB(0, 10, 0, 10),

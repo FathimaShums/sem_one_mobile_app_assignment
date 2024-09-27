@@ -6,7 +6,8 @@ class ACategory extends StatelessWidget {
   const ACategory({
     super.key,
     required this.CategoryItem,
-    required this.navigateToPage, // This is the page you want to navigate to
+    required this.navigateToPage,
+    // This is the page you want to navigate to
   });
 
   final TheCategory CategoryItem;
@@ -20,8 +21,10 @@ class ACategory extends StatelessWidget {
           context,
           MaterialPageRoute(
               builder: (context) => Acategorypage(
-                  orientation: MediaQuery.of(context).orientation,
-                  oftype: navigateToPage)),
+                    orientation: MediaQuery.of(context).orientation,
+                    oftype: navigateToPage,
+                    isCategorySelected: true,
+                  )),
         );
       },
       child: Stack(
