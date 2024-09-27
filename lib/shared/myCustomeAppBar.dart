@@ -9,13 +9,7 @@ class MyCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(selectedCategory), // Dynamic title based on selectedCategory
-      actions: [
-        IconButton(
-          icon: const Icon(Icons.menu), // Hamburger icon
-          onPressed: () => onMenuTap(), // Call the menu tap function
-        ),
-      ],
+      title: Text(selectedCategory),
     );
   }
 
