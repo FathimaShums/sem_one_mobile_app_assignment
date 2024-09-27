@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sem_one_mobile_app_assignment/models/TheCategory.dart';
+import 'package:sem_one_mobile_app_assignment/screens/ACategoryPage.dart';
 
 class ACategory extends StatelessWidget {
   const ACategory({
@@ -9,16 +10,18 @@ class ACategory extends StatelessWidget {
   });
 
   final TheCategory CategoryItem;
-  final Widget navigateToPage; // The widget/page to navigate to
+  final String navigateToPage; //figure out which page to navigate to
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Navigating to the respective page when tapped
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => navigateToPage),
+          MaterialPageRoute(
+              builder: (context) => Acategorypage(
+                  orientation: MediaQuery.of(context).orientation,
+                  oftype: navigateToPage)),
         );
       },
       child: Stack(
