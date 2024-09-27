@@ -5,6 +5,25 @@ import 'package:sem_one_mobile_app_assignment/screens/login.dart';
 
 List<FoodItem> cartItems = [];
 List<FoodItem> favouriteItems = [];
+final List<FoodItem> items = [
+  FoodItem(
+      1,
+      "Maqluba",
+      "rice, you turn the pot upside down when serving",
+      "Includes fried vegetables such as eggplant, cauliflower, and potatoes, arranged in a pot before being cooked and inverted for presentation",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC7yHnSVgsZqy1WQEsiT-Dgjj1NjpxjrpZWA&s",
+      50.03,
+      "Rice"),
+  FoodItem(
+      2,
+      "Cream Cheese",
+      "Bread",
+      "",
+      "https://www.tashasartisanfoods.com/blog/wp-content/uploads/2023/04/Korean-Cream-Cheese-Garlic-Bread-8.jpeg",
+      50.03,
+      "Breads"),
+];
+
 void main() {
   runApp(const MyApp());
 }
