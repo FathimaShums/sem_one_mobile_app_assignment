@@ -13,7 +13,7 @@ final List<FoodItem> items = [
       "looks scrumptious.",
       "https://b8455d5a.rocketcdn.me/blog/wp-content/uploads/2023/09/Apple-Pie-Cinnamon-Rolls-11-720x960.jpeg",
       50.03,
-      "Rice"),
+      "Bread"),
   FoodItem(
       2,
       "Cream Cheese",
@@ -37,7 +37,7 @@ final List<FoodItem> items = [
       "A palestinian dish",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz8_wrK5Yt0IYeybJRoHhuprweB0vQYSVLGQ&s",
       25.7,
-      "Sweet"),
+      "Dessert"),
   FoodItem(
       4,
       "Butter Bread",
@@ -54,6 +54,38 @@ final List<FoodItem> items = [
       "https://b8455d5a.rocketcdn.me/blog/wp-content/uploads/2015/11/Roasted-Sweet-Potato-Chickpea-Salad-2-720x960.jpg",
       25.05,
       "Salad"),
+  FoodItem(
+      6,
+      "Mango smoothie",
+      "Absolutely the best mango smoothie in the area",
+      "made with KC mangoes",
+      "https://b8455d5a.rocketcdn.me/blog/wp-content/uploads/2023/04/The-Perfect-Mango-Matcha-Latte-5-FEATURE-720x960.jpeg",
+      30.05,
+      "Drink"),
+  FoodItem(
+      7,
+      "Hot Chocolate",
+      "Even tastier than what your grandmother makes",
+      "nothing needed here",
+      "https://b8455d5a.rocketcdn.me/blog/wp-content/uploads/2020/12/Classic-Hot-chocolate-6-new-720x960.jpg",
+      25.5,
+      "Drink"),
+  FoodItem(
+      7,
+      "Lemon rice",
+      "Very tasty lemon rice",
+      "",
+      "https://b8455d5a.rocketcdn.me/blog/wp-content/uploads/2020/04/Lemon-Rice-1-720x924.jpg",
+      35.5,
+      "Rice"),
+  FoodItem(
+      8,
+      "Falafel",
+      "crispy,air fried",
+      "no need ot put stuff here",
+      "https://b8455d5a.rocketcdn.me/blog/wp-content/uploads/2023/10/Easy-Air-Fryer-Falafel-Recipe-9-FEATURE-720x960.jpeg",
+      20.00,
+      "Appetizer"),
 ];
 
 void main() {

@@ -56,9 +56,25 @@ class _AcategorypageState extends State<Acategorypage> {
 
   VoidCallback AddToFavourites(FoodItem item) {
     return () {
-      FoodItem TheItem = FoodItem(item.id, item.title, item.description,
-          item.detaileddescription, item.image, item.price, item.ItsCategory);
-      favouriteItems.add(TheItem);
+      bool itemExists =
+          favouriteItems.any((favouriteItem) => favouriteItem.id == item.id);
+
+      if (!itemExists) {
+        FoodItem TheItem = FoodItem(
+          item.id,
+          item.title,
+          item.description,
+          item.detaileddescription,
+          item.image,
+          item.price,
+          item.ItsCategory,
+        );
+        favouriteItems.add(TheItem);
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Item is already in favourites!')),
+        );
+      }
     };
   }
 
